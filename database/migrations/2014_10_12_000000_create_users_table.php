@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pid')->references('id')->on('bosses');
-            $table->string('name');
-            $table->string('title');
-            $table->string('image')->unique();
+            $table->string('name')->nullable();
+            $table->string('title')->nullable();
+            $table->string('image')->unique()->nullable();
             $table->timestamps();
         });
     }
